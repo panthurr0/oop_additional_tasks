@@ -11,7 +11,25 @@
 
 
 class MyList:
-    pass
+    def __init__(self, data):
+        self.__data = data
+
+    def __repr__(self):
+        return f'{self.__class__.__name__}({self.__data})'
+
+    def __str__(self):
+        return f'{self.__data}'
+
+    def __len__(self):
+        return len(self.__data)
+
+    def __add__(self, other):
+        new_list = self.__data + other.data
+        return new_list
+
+    @property
+    def data(self):
+        return self.__data
 
 
 # код для проверки 
